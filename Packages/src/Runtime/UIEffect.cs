@@ -941,6 +941,10 @@ namespace Coffee.UIEffects
             m_GradationGradient ??= new Gradient();
             m_GradationGradient.SetKeys(colorKeys, alphaKeys);
             context?.SetGradationDirty();
+            UpdateContext(context);
+            ApplyContextToMaterial();
+            SetVerticesDirty();
+            SetMaterialDirty();
         }
 
         protected override void UpdateContext(UIEffectContext c)
